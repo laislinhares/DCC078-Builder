@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class EmpresaBuilder {
 
-    private Empresa empresa;
+    private final Empresa empresa;
 
     public EmpresaBuilder() {
         empresa = new Empresa();
@@ -14,7 +14,7 @@ public class EmpresaBuilder {
         if (empresa.getCnpj() == 0) {
             throw new IllegalArgumentException("CNPJ inválido");
         }
-        if (empresa.getNome().equals("")) {
+        if (empresa.getNome().isEmpty()) {
             throw new IllegalArgumentException("Nome inválido");
         }
         return empresa;
